@@ -1078,6 +1078,38 @@ production stylesheet in assets/built/screen.css
     padding: 0;
 }
 
+/* Special Styling for mission statement
+
+The first post in the list is styled to be bigger than the others and take over
+the full width of the grid to give it more emphasis. Wrapped in a media query to
+make sure this only happens on large viewports / desktop-ish devices.
+
+*/
+
+.Mission-container {
+    text-align: center;
+    background-color: rgb(40, 41, 41);
+    border: 1px solid rgb(255, 255, 255);
+    padding: 25px 117.6px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 19.14px;
+  }
+  
+  .mission-title {
+    margin: 0;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 0;
+    font-size: 38.28px;
+  }
+  
+  .mission-description {
+    margin: 19.14px 0;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 19.14px 0;
+    font-size: 19.14px;
+  }
+
 
 /* Special Styling for home page grid (below):
 
