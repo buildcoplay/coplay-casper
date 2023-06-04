@@ -2,21 +2,18 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<div class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}">
+<div
+    class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}">
 
     {{#if @custom.show_publication_cover}}
         {{#if @site.cover_image}}
             {{!-- This is a responsive image, it loads different sizes depending on device
             https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-            <img class="site-header-cover"
-                srcset="{{img_url @site.cover_image size="s"}} 300w,
+            <img class="site-header-cover" srcset="{{img_url @site.cover_image size="s"}} 300w,
                         {{img_url @site.cover_image size="m"}} 600w,
                         {{img_url @site.cover_image size="l"}} 1000w,
-                        {{img_url @site.cover_image size="xl"}} 2000w"
-                sizes="100vw"
-                src="{{img_url @site.cover_image size="xl"}}"
-                alt="{{@site.title}}"
-            />
+                        {{img_url @site.cover_image size="xl"}} 2000w" sizes="100vw"
+                src="{{img_url @site.cover_image size="xl"}}" alt="{{@site.title}}" />
         {{/if}}
     {{/if}}
 
@@ -26,7 +23,7 @@ into the {body} of the default.hbs template --}}
                 {{#if @site.logo}}
                     <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
                 {{else}}
-                    <h1 class="site-title">{{@site.title}}</h1>
+                    <h1 class="site-title superhero">{{@site.title}}</h1>
                 {{/if}}
             {{/match}}
             {{#if @site.description}}
@@ -39,16 +36,113 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
-<div class="inner posts">
 
-    <div class="post-feed">
-        {{#foreach posts}}
-            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-            {{> "post-card"}}
-        {{/foreach}}
+
+
+
+
+    <div class="inner posts">
+
+        <div class="post-feed">
+            {{#foreach posts}}
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                {{> "post-card"}}
+            {{/foreach}}
+
+        </div>
+
+        <div id="mission" class="full-width">
+            <div class="inner">
+                <h1>Our Mission</h1>
+                <p>
+                    We are passionate about making the world a better place for people by empowering hospitals to use
+                    creative technology and gaming. We believe the power of play has the ability to ease suffering and
+                    loneliness and provide connection and joy. Our mission is to provide the tools and services needed
+                    to
+                    make these experiences as accessible as possible to patients and hospitals.
+                </p>
+            </div>
+        </div>
+
+        {{pagination}}
+
+        {{> "home-cards"}}
+
+        <section class="gh-sub" style="text-align: center;">
+            <h2>Be the first to know.</h2>
+            <p class="site-description">Join the CoPlay community — sign up to get early access to the latest features,
+                tools, and tutorials.</p>
+
+            <!-- Begin Mailchimp Signup Form -->
+            <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
+            <style type="text/css">
+                #mc_embed_signup {
+                    background: #fff;
+                    clear: left;
+                    width: 460px;
+                    max-width: 100%;
+                    margin: 36px auto;
+                }
+
+                /* 
+            Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file.
+        */
+            </style>
+            <div id="mc_embed_signup">
+                <form
+                    action="https://coplay.us14.list-manage.com/subscribe/post?u=30105f007ac96e2ed907882b4&amp;id=f5cbf81e5a&amp;f_id=00f186e0f0"
+                    method="post" id="mc-embedded-subscribe-form" 
+                    name="mc-embedded-subscribe-form" 
+                    class="validate"
+                    target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+                        <div class="mc-field-group">
+
+                            {{!-- <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required> --}}
+                            <input class="required email email-form-input" name="EMAIL" id="mce-EMAIL"
+                                placeholder="Your Email Address" type="email" value="">
+
+                            <span id=" mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+                        </div>
+                        <div class="mc-field-group">
+                            <textarea style="height: 100px; text-indent: 2%;" placeholder="Leave us a friendly message!"
+                                type="text" value="" name="NOTE" class="" id="mce-NOTE"></textarea>
+                            <span id="mce-NOTE-HELPERTEXT" class="helper_text"></span>
+                        </div>
+                        <div id="mce-responses" class="clear foot">
+                            <div class="response" id="mce-error-response" style="display:none"></div>
+                            <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>
+                        <div class="mc-field-group">
+                            <small style="margin: 0; text-align: center;">No spam. Only the good stuff. Unsubscribe
+                                any time.</small>
+                        </div>
+                        <div class="mc-field-group">
+                            <input style="margin: 0 auto; width: 100px; height:40px; background-color: black; padding: 0px" type="submit" value="Subscribe"
+                                name="subscribe" id="mc-embedded-subscribe" class="button">
+                        </div>
+
+
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                name="b_30105f007ac96e2ed907882b4_f5cbf81e5a" tabindex="-1" value=""></div>
+                        <div class="optionalParent">
+                            <div class="clear foot">
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+            <script
+                type='text/javascript'>(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[3] = 'NOTE'; ftypes[3] = 'text'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
+            <!--End mc_embed_signup-->
+
+        </section>
+
     </div>
 
-    {{pagination}}
-
-</div>
 </main>
+

@@ -112,8 +112,8 @@ production stylesheet in assets/built/screen.css
     z-index: 100;
     display: flex;
     align-items: center;
-    padding-top: calc(19vmin + 44px);
-    padding-bottom: 19vmin;
+    padding-top: calc(12vmin + 44px);
+    padding-bottom: 12vmin;
     text-align: center;
     color: var(--color-darkgrey);
 }
@@ -843,7 +843,7 @@ production stylesheet in assets/built/screen.css
     display: grid;
     gap: 4.8vmin 4vmin;
     grid-template-columns: repeat(6, 1fr);
-    padding: max(4.8vmin, 36px) 0 0;
+    padding: max(4.8vmin, 36px) 0 max(4.8vmin, 36px);
 }
 
 :is(.tag-template, .author-template) .post-feed {
@@ -907,6 +907,7 @@ production stylesheet in assets/built/screen.css
     height: 100%;
     background: var(--color-lightgrey) no-repeat center center;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .post-card.keep-ratio:not(.post-card-large):not(.post-card-full) .post-card-image {
@@ -1078,38 +1079,15 @@ production stylesheet in assets/built/screen.css
     padding: 0;
 }
 
-/* Special Styling for mission statement
-
-The first post in the list is styled to be bigger than the others and take over
-the full width of the grid to give it more emphasis. Wrapped in a media query to
-make sure this only happens on large viewports / desktop-ish devices.
-
-*/
-
-.Mission-container {
-    text-align: center;
-    background-color: rgb(40, 41, 41);
-    border: 1px solid rgb(255, 255, 255);
-    padding: 25px 117.6px;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    font-size: 19.14px;
-  }
-  
-  .mission-title {
+.home-card-title {
     margin: 0;
-    border: 1px solid rgb(255, 255, 255);
-    padding: 0;
-    font-size: 38.28px;
-  }
-  
-  .mission-description {
-    margin: 19.14px 0;
-    border: 1px solid rgb(255, 255, 255);
-    padding: 19.14px 0;
-    font-size: 19.14px;
-  }
-
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 12px;
+    padding-top: 24px;
+}
 
 /* Special Styling for home page grid (below):
 
@@ -2051,15 +2029,15 @@ iframe.instagram-media + script + :not([id]) {
     position: relative;
     margin: max(12vmin, 64px) 0 0 0;
     padding-top: 48px;
-    padding-bottom: 140px;
+    padding-bottom: 48px;
     color: #fff;
     background: color-mod(var(--color-darkgrey) l(-5%));
 }
 
 .site-footer .inner {
-    display: grid;
-    grid-gap: 40px;
-    grid-template-columns: auto 1fr auto;
+    display: block;
+    /* grid-gap: 40px;
+    grid-template-columns: auto 1fr auto; */
     color: rgba(255,255,255,0.7);
     font-size: 1.3rem;
 }
@@ -2520,17 +2498,31 @@ html.dark-mode .footer-cta-title {
     }
 }
 
-/*
+ /* CoPlay Custom Stylings */
 
-Hey! You reached the end.
+  .full-width {
+    padding: 36px;
+    background: black;
+    color: white;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    text-align: center;
+    margin-bottom: 48px;
+    margin-top: 48px
+  }
 
-Hope you enjoyed this CSS file, if you have any suggestions
-for improvements that might be useful for everyone who uses
-this theme, you can find the open source repository for it
-here: https://github.com/tryghost/casper
+  .email-form-input {
+    height: 40px;
+    width: 460px;
+    color: var(--color-secondary-text);
+    border-color: rgb(230, 230, 230);
+    border-width: 1px;
+    padding: 10px;
+  }
 
-Or, if you've just scrolled all the way to the bottom of the
-file to add some of your own styles. Well, you've come to
-the right place. Onward!
-
- */
+  .superhero {
+    font-size: max(10vmin, 6rem);
+    letter-spacing: -.03em;
+    line-height: 1em;
+    text-indent: -.03em;
+}
