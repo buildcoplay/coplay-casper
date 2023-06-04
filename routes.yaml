@@ -4,9 +4,10 @@ collections:
   /:
     permalink: /{slug}/
     template: index
-  /products:
-    permalink: /{slug}/
+  /products/:
+    permalink: /products/{slug}/
     template: page-products
+    data: tag.product
 
 taxonomies:
   tag: /tag/{slug}/

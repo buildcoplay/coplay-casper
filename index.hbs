@@ -51,10 +51,10 @@ into the {body} of the default.hbs template --}}
 
         </div>
 
-        <div id="mission" class="full-width">
+        <div id="mission" class="mission-container">
             <div class="inner">
                 <h1>Our Mission</h1>
-                <p>
+                <p class='mission-text'>
                     We are passionate about making the world a better place for people by empowering hospitals to use
                     creative technology and gaming. We believe the power of play has the ability to ease suffering and
                     loneliness and provide connection and joy. Our mission is to provide the tools and services needed
@@ -63,8 +63,6 @@ into the {body} of the default.hbs template --}}
                 </p>
             </div>
         </div>
-
-        {{pagination}}
 
         {{> "home-cards"}}
 
@@ -97,7 +95,7 @@ into the {body} of the default.hbs template --}}
                     class="validate"
                     target="_blank" novalidate>
                     <div id="mc_embed_signup_scroll">
-                        <div class="mc-field-group">
+                        <div id="contact-us" class="mc-field-group">
 
                             {{!-- <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required> --}}
                             <input class="required email email-form-input" name="EMAIL" id="mce-EMAIL"
@@ -119,7 +117,7 @@ into the {body} of the default.hbs template --}}
                                 any time.</small>
                         </div>
                         <div class="mc-field-group">
-                            <input style="margin: 0 auto; width: 100px; height:40px; background-color: black; padding: 0px" type="submit" value="Subscribe"
+                            <input class ="gh-head-button" style="margin: 0 auto; width: 100px; height:40px; padding: 0px" type="submit" value="Subscribe"
                                 name="subscribe" id="mc-embedded-subscribe" class="button">
                         </div>
 

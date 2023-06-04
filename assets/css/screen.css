@@ -2500,16 +2500,22 @@ html.dark-mode .footer-cta-title {
 
  /* CoPlay Custom Stylings */
 
-  .full-width {
+  .mission-container {
     padding: 36px;
-    background: black;
-    color: white;
+    background-color: var(--color-lightgrey);
+    /* color: var( --ghost-accent-color); */
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     text-align: center;
     margin-bottom: 48px;
-    margin-top: 48px
+    margin-top: 48px;
   }
+
+  .mission-text {
+    color: var(--color-darkgrey);
+    font-weight:600;
+  }
+
 
   .email-form-input {
     height: 40px;
