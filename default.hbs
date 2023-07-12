@@ -53,12 +53,12 @@
                         {{#unless @member}}
                             {{#unless @site.members_invite_only}}
                                 <a class="gh-head-link" href="#contact-us" data-portal="signup">Subscribe</a>
-                                <a class="gh-head-button" href="#/portal/signin" data-portal="signin">Sign in</a>
+                                <a class="gh-head-button" href="https://xm.coplay.io/" data-portal="signin">Sign in</a>
                             {{else}}
-                                <a class="gh-head-button" href="#/portal/signin" data-portal="signin">Sign in</a>
+                                <a class="gh-head-button" href="https://xm.coplay.io/" data-portal="signin">Sign in</a>
                             {{/unless}}
                         {{else}}
-                            <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
+                            <a class="gh-head-button" href="https://xm.coplay.io/" data-portal="account">Account</a>
                         {{/unless}}
                     </div>
                 </div>
@@ -73,9 +73,11 @@
         {{!-- The global footer at the very bottom of the screen --}}
         <footer class="site-footer outer">
             <div class="inner">
-                <section class="copyright"><a href="mailto:support@coplay.io">Questions? Send us an email at support@coplay.io</a></section>
-                <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}  | Technology For Good
-                <section class="">Based in Salt Lake City, Utah</section>
+                <section class="copyright"><a href="mailto:support@coplay.io">Questions? Send us an email at
+                        support@coplay.io</a></section>
+                <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}} |
+                    Technology For Good
+                    <section class="">Based in Salt Lake City, Utah</section>
             </div>
         </footer>
 
